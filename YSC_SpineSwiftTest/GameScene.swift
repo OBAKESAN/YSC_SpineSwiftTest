@@ -29,6 +29,10 @@ class GameScene: SKScene {
         self.addChild(alien)
         alien.runQueue()
         
+//        runAnimationSequence Test
+//        let animatonArray: [String] = ["Walking001", "animation3"]
+//        alien.runAnimationSequence(animatonArray)
+        
         
         hero.spawn(JSONName: "hero", atlasName:"hero", skinName: nil)
         hero.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMinY(self.frame) + 100)

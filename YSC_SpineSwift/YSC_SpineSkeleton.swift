@@ -291,6 +291,13 @@ class YSC_SpineSkeleton: SKNode {
         }
     }
     
+    func runAnimationSequence(animationName:[String]){
+        //Boneのみ実装・・・。
+        for aBone in self.bones {
+            aBone.runAnimationSequence(animationName)
+        }
+    }
+    
     func runAnimationUsingQueue(animationName:String, count:Int, interval:NSTimeInterval) {
         
         if let queuedAnimationName = self.privateQueuedAnimation {

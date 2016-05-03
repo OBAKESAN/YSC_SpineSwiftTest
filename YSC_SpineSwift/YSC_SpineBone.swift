@@ -267,6 +267,21 @@ class YSC_SpineBone: SKSpriteNode {
         }
     }
     
+    func runAnimationSequence(animationName:[String]) {
+        
+        self.removeAllActions()     // reset all actions first
+        self.setToDefaults()
+        
+        var actionArray: [SKAction] = []
+        
+        for actionNameOne in animationName {
+            actionArray.append(self.SRTAction[actionNameOne]!)
+        }
+        
+        let sequence = SKAction.sequence(actionArray)
+        self.runAction(sequence)
+    }
+    
     func runAnimationUsingQueue(animationName:String, count:Int, interval:NSTimeInterval, queuedAnimationName:String) {
         self.removeAllActions()     // reset all actions first
         self.setToDefaults()
